@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <title>EDITVERSE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://cdn.jawplayer.com/libs/jawplayer.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
   <style>
     * {
       margin: 0;
@@ -343,7 +344,8 @@
   </header>
 
   <div id="player-container">
-    <video id="player" playsinline controls></video>
+  <div id="jawplayer"></div>
+</div>
   </div>
 <div id="privacyModal" class="modal">
   <div class="modal-content">
@@ -353,6 +355,24 @@
     <p>We respect your privacy. We do not collect personal data or track your activities on this website. External services like Telegram may have their own privacy policies.</p>
   </div>
 </div>
+<div id="myPlayer"></div>
+
+<script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
+<script>
+  jwplayer("myPlayer").setup({
+    file: "https://otte.live.fly.ww.aiv-cdn.net/bom-nitro/live/clients/dash/enc/uugw0qkwob/out/v1/acfdcf2dabd24075bb615c6c19ba9bd4/cenc.mpd",
+    type: "dash",
+    drm: {
+      clearkey: {
+        keyId: "ec2147a4b9b1b87ee3d8dc6915bc7928",
+        key: "c84fcd82767a9cd9e2e0c0d1b47a72c5"
+      }
+    },
+    width: "100%",
+    aspectratio: "16:9",
+    autostart: false
+  });
+</script>
 
   <div class="tabs">
     <div class="tab active" id="tabChat">Live Chat</div>
@@ -380,7 +400,7 @@
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+  
   <script>
     const jsonUrl = 'https://raw.githubusercontent.com/StmpupCricket/Fox-Json/refs/heads/main/data.jsona';
     fetch(jsonUrl)
